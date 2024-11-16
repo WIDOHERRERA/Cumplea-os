@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            color: #eee;
+            font-family: monospace;
+            text-align: center;
+            gap: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .emoji {
+            font-size: 28px;
+            animation: bounce 1.5s infinite;
+            word-wrap: break-word; /* Permite que el texto se ajuste si es muy largo */
+        }
+
+        .ascii-art {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        figure {
+            max-width: 150px;
+            text-align: center;
+            margin: 0;
+        }
+
+        figure img, figure video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #ffcc00;
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            animation: bounce 1.5s infinite;
+        }
+
+        .message span {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Media Query para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .emoji {
+                font-size: 20px; /* Reduce el tamaño de la fuente */
+                line-height: 1.2; /* Ajusta la altura de línea para texto compacto */
+            }
+
+            .ascii-art {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            figure {
+                max-width: 100%;
+            }
+
+            .message {
+                font-size: 16px;
+                line-height: 1.2; /* Ajusta la separación entre líneas */
+                padding: 5px; /* Agrega un poco de espacio interno */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" src="Princesa.mp3" loop></audio>
+
+    <script>
+        document.addEventListener('click', () => {
+            const bgMusic = document.getElementById('bgMusic');
+            if (bgMusic.paused) {
+                bgMusic.play();
+            }
+        }, { once: true });
+    </script>
+
+    <div class="emoji">🎉🎂🎈¡Feliz Cumpleaños! 🎈🎂🎉</div>
+    <div class="ascii-art">
+        <figure>
+            <img src="katy.png" alt="Imagen de cumpleaños 1">
+            <figcaption>Para Esta Princesa</figcaption>
+        </figure>
+        <figure>
+            <video src="ayy.mp4" autoplay loop muted playsinline></video>
+            <figcaption>Con mucho amor</figcaption>
+        </figure>
+        <figure>
+            <img src="amm.jpg" alt="Imagen de cumpleaños 3">
+            <figcaption>Del chico que te enamoraste</figcaption>
+        </figure>
+        <figure>
+            <img src="wi.jpg" alt="Imagen de cumpleaños 4">
+            <figcaption>Siempre contigo</figcaption>
+        </figure>
+    </div>
+    <p class="message">
+        <span>💖</span> ¡Espero que tengas un día lleno de alegría! <span>🌹</span> TE AMO <span>💖</span> 
+    </p>
+</body>
+</html>
